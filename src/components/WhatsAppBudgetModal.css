@@ -1,0 +1,194 @@
+.wa-budget-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
+  box-sizing: border-box;
+}
+
+.wa-budget-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: rgba(10, 12, 16, 0.72);
+  cursor: pointer;
+}
+
+.wa-budget-modal__dialog {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 26rem);
+  padding: 1.45rem 1.35rem 1.4rem;
+  border: 1px solid rgba(201, 169, 110, 0.35);
+  border-radius: 14px;
+  background:
+    radial-gradient(ellipse 70% 60% at 10% 0%, rgba(201, 169, 110, 0.16), transparent 55%),
+    #171a20;
+  color: #f4f5f7;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+
+.wa-budget-modal__close {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.75rem;
+  width: 2rem;
+  height: 2rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(244, 245, 247, 0.8);
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.wa-budget-modal__close:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+.wa-budget-modal__eyebrow {
+  margin: 0 0 0.45rem;
+  color: #e8d9a8;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.wa-budget-modal__form h3,
+.wa-budget-modal__success h3 {
+  margin: 0 0 0.55rem;
+  padding-right: 1.5rem;
+  color: #fff;
+  font-size: clamp(1.15rem, 2.4vw, 1.35rem);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.wa-budget-modal__copy,
+.wa-budget-modal__success p {
+  margin: 0 0 1rem;
+  color: rgba(244, 245, 247, 0.72);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.wa-budget-modal__summary {
+  margin: 0 0 1rem;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid rgba(201, 169, 110, 0.28);
+  border-radius: 10px;
+  background: rgba(201, 169, 110, 0.1);
+  color: #e8d9a8;
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.wa-budget-modal__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 0.85rem;
+  color: rgba(244, 245, 247, 0.78);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.wa-budget-modal__input-row {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.wa-budget-modal__prefix {
+  flex-shrink: 0;
+  padding: 0.75rem 0.7rem 0.75rem 0.85rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(244, 245, 247, 0.65);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.wa-budget-modal__input-row input {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+  padding: 0.75rem 0.85rem;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  outline: none;
+}
+
+.wa-budget-modal__input-row input::placeholder {
+  color: rgba(244, 245, 247, 0.35);
+  letter-spacing: 0;
+}
+
+.wa-budget-modal__input-row:focus-within {
+  border-color: rgba(201, 169, 110, 0.55);
+  box-shadow: 0 0 0 3px rgba(201, 169, 110, 0.12);
+}
+
+.wa-budget-modal__error {
+  margin: -0.35rem 0 0.85rem;
+  color: #ffb4a8;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.wa-budget-modal__submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0.25rem 0 0;
+  padding: 0.85rem 1.1rem;
+  border: 1px solid rgba(201, 169, 110, 0.45);
+  border-radius: 999px;
+  background: #c9a96e;
+  color: #0f1114;
+  font-size: 0.84rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.wa-budget-modal__submit:hover {
+  background: #e2c97e;
+  transform: translateY(-1px);
+}
+
+.wa-budget-modal__success strong {
+  color: #e8d9a8;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wa-budget-modal__submit {
+    transition: none;
+  }
+
+  .wa-budget-modal__submit:hover {
+    transform: none;
+  }
+}
