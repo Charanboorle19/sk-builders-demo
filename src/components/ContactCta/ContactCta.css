@@ -1,0 +1,535 @@
+/* Contact / CTA — closing section for Demo2 */
+
+.d2-cta {
+  --cta-bg: var(--bg-contact);
+  --cta-ink: var(--ink-contact);
+  --cta-muted: var(--muted-contact);
+  --cta-accent: var(--accent-contact);
+  --cta-accent-hover: var(--accent-contact-hover);
+  --cta-line: var(--line-contact);
+  --cta-pad-x: var(--d2-pad-x, clamp(1.25rem, 4vw, 3.5rem));
+
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: clamp(4rem, 7vh, 5.5rem) var(--cta-pad-x) clamp(3rem, 5vh, 4rem);
+  overflow: hidden;
+  background: var(--cta-bg);
+  color: var(--cta-ink);
+  font-family: 'Montserrat', sans-serif;
+  border-top: 1px solid color-mix(in srgb, var(--cta-accent) 22%, transparent);
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.d2-cta__marker {
+  position: absolute;
+  top: clamp(5.5rem, 12vh, 8rem);
+  right: clamp(1.5rem, 6vw, 5rem);
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.45rem;
+  pointer-events: none;
+}
+
+.d2-cta__marker-line {
+  width: 4.5rem;
+  height: 1px;
+  background: var(--cta-accent);
+  opacity: 0.55;
+}
+
+.d2-cta__marker-label {
+  color: var(--cta-accent);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.d2-cta__inner {
+  position: relative;
+  z-index: 1;
+  width: min(1400px, 100%);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.d2-cta__stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(2rem, 4.5vw, 4rem);
+  align-items: start;
+}
+
+.d2-cta__copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  max-width: 34rem;
+  padding-top: 0.35rem;
+}
+
+.d2-cta__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 0;
+  color: var(--cta-accent);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.d2-cta__eyebrow::before {
+  content: '';
+  width: 1.75rem;
+  height: 1px;
+  background: var(--cta-accent);
+}
+
+.d2-cta__heading {
+  margin: 0;
+  animation: none;
+}
+
+.d2-cta .d2-headline__line {
+  color: var(--cta-ink);
+}
+
+.d2-cta .d2-headline__line--accent {
+  color: var(--cta-accent);
+}
+
+.d2-cta__lead {
+  margin: 0;
+  max-width: 32rem;
+  color: var(--cta-muted);
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  font-weight: 500;
+  line-height: 1.65;
+}
+
+.d2-cta__primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.35rem;
+  color: var(--cta-ink);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--cta-accent);
+  padding-bottom: 0.3rem;
+  transition: color 0.25s ease, border-color 0.25s ease, gap 0.3s ease;
+}
+
+.d2-cta__primary:hover {
+  color: var(--cta-accent);
+  border-color: var(--cta-accent-hover);
+  gap: 0.75rem;
+}
+
+.d2-cta__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 1.25rem;
+  padding-top: 1.15rem;
+  border-top: 1px solid var(--cta-line);
+}
+
+.d2-cta__meta-place {
+  margin: 0;
+  color: var(--cta-ink);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.d2-cta__meta-note {
+  margin: 0;
+  color: var(--cta-muted);
+  font-size: 0.86rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.d2-cta__form-wrap {
+  width: 100%;
+  padding: clamp(1.35rem, 2.5vw, 1.85rem) 0 0;
+  border-top: 1px solid var(--cta-line);
+}
+
+.d2-cta__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.d2-cta__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+
+.d2-cta__label {
+  color: var(--cta-muted);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.d2-cta__input {
+  width: 100%;
+  margin: 0;
+  padding: 0.75rem 0;
+  border: 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--cta-ink) 22%, transparent);
+  border-radius: 0;
+  background: transparent;
+  color: var(--cta-ink);
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.4;
+  outline: none;
+  transition: border-color 0.25s ease;
+}
+
+.d2-cta__input::placeholder {
+  color: color-mix(in srgb, var(--cta-muted) 80%, transparent);
+}
+
+.d2-cta__input:focus {
+  border-bottom-color: var(--cta-accent);
+}
+
+.d2-cta__textarea {
+  resize: vertical;
+  min-height: 5.5rem;
+  padding-top: 0.55rem;
+}
+
+.d2-cta__input[aria-invalid='true'] {
+  border-bottom-color: var(--color-error);
+}
+
+.d2-cta__error {
+  color: var(--color-error-text);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.d2-cta__interest {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.d2-cta__chip {
+  cursor: pointer;
+}
+
+.d2-cta__chip input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.d2-cta__chip span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.2rem;
+  padding: 0.35rem 0.85rem;
+  border: 1px solid color-mix(in srgb, var(--cta-ink) 28%, transparent);
+  border-radius: 0.55rem;
+  color: var(--cta-muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.d2-cta__chip input:focus-visible + span {
+  outline: 1px solid var(--cta-accent);
+  outline-offset: 2px;
+}
+
+.d2-cta__chip input:checked + span {
+  color: var(--cta-accent);
+  border-color: color-mix(in srgb, var(--cta-accent) 65%, transparent);
+  background: color-mix(in srgb, var(--cta-accent) 12%, transparent);
+}
+
+.d2-cta__submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: fit-content;
+  margin-top: 0.35rem;
+  padding: 0.85rem 1.35rem;
+  border: 1px solid var(--cta-accent);
+  border-radius: 0.55rem;
+  background: var(--cta-accent);
+  color: var(--color-on-accent, var(--cta-bg));
+  font-family: inherit;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    gap 0.3s ease;
+}
+
+.d2-cta__submit:hover {
+  background: transparent;
+  color: var(--cta-ink);
+  border-color: var(--cta-ink);
+  gap: 0.75rem;
+}
+
+.d2-cta__success {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  max-width: 28rem;
+  padding-top: 0.25rem;
+}
+
+.d2-cta__success-eyebrow {
+  margin: 0;
+  color: var(--cta-accent);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.d2-cta__success-title {
+  margin: 0;
+  font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.d2-cta__success-text {
+  margin: 0 0 0.5rem;
+  color: var(--cta-muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.65;
+}
+
+.d2-cta__footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.d2-cta__rule {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    var(--cta-accent) 0,
+    var(--cta-accent) 3.25rem,
+    var(--cta-line) 3.25rem,
+    var(--cta-line) 100%
+  );
+}
+
+.d2-cta__closing {
+  margin: 0;
+  color: var(--cta-ink);
+  font-size: clamp(0.78rem, 1.3vw, 0.9rem);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+
+@media (max-width: 980px) {
+  .d2-cta {
+    padding: 2.75rem var(--cta-pad-x) 2.75rem;
+  }
+
+  .d2-cta__inner {
+    gap: 2rem;
+  }
+
+  .d2-cta__stage {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .d2-cta__copy {
+    max-width: none;
+    gap: 0.85rem;
+    padding-top: 0;
+  }
+
+  .d2-cta__heading.d2-headline {
+    font-size: clamp(1.75rem, 7vw, 2.35rem);
+  }
+
+  .d2-cta__lead {
+    max-width: none;
+    font-size: 0.95rem;
+  }
+
+  .d2-cta__primary {
+    margin-top: 0.15rem;
+  }
+
+  .d2-cta__meta {
+    margin-top: 0.85rem;
+    padding-top: 0.9rem;
+    width: 100%;
+  }
+
+  .d2-cta__marker {
+    top: 1.15rem;
+    right: var(--cta-pad-x);
+  }
+
+  .d2-cta__marker-line {
+    width: 2.75rem;
+  }
+
+  .d2-cta__marker-label {
+    font-size: 0.58rem;
+  }
+
+  .d2-cta__form-wrap {
+    padding-top: 1.35rem;
+  }
+
+  .d2-cta__form {
+    gap: 1rem;
+  }
+
+  .d2-cta__interest {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.45rem;
+  }
+
+  .d2-cta__chip span {
+    width: 100%;
+    justify-content: center;
+    min-height: 2.45rem;
+    font-size: 0.68rem;
+  }
+
+  .d2-cta__input {
+    font-size: 1rem;
+    padding: 0.85rem 0;
+  }
+
+  .d2-cta__textarea {
+    min-height: 5rem;
+  }
+
+  .d2-cta__submit {
+    width: 100%;
+    min-height: 2.85rem;
+  }
+
+  .d2-cta__success {
+    max-width: none;
+  }
+
+  .d2-cta__closing {
+    font-size: 0.74rem;
+    letter-spacing: 0.12em;
+    line-height: 1.55;
+  }
+}
+
+@media (max-width: 560px) {
+  .d2-cta {
+    padding: 2.35rem var(--cta-pad-x) 2.5rem;
+  }
+
+  .d2-cta__eyebrow {
+    font-size: 0.68rem;
+  }
+
+  .d2-cta__meta-place {
+    font-size: 0.76rem;
+  }
+
+  .d2-cta__meta-note {
+    font-size: 0.82rem;
+  }
+
+  .d2-cta__interest {
+    gap: 0.4rem;
+  }
+
+  .d2-cta__chip span {
+    padding: 0.35rem 0.55rem;
+    letter-spacing: 0.06em;
+  }
+
+  .d2-cta__success-title {
+    font-size: 1.55rem;
+  }
+
+  .d2-cta__footer {
+    gap: 0.95rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .d2-cta__primary,
+  .d2-cta__submit,
+  .d2-cta__chip span,
+  .d2-cta__input {
+    transition: none !important;
+  }
+}
+
+:root[data-theme='navy-dark'] .d2-cta__submit {
+  background: var(--accent-fill);
+  border-color: var(--accent-fill);
+  color: var(--on-accent);
+}
+
+:root[data-theme='navy-dark'] .d2-cta__submit:hover {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+:root[data-theme='navy-dark'] .d2-cta__chip input:checked + span {
+  color: var(--on-accent);
+  border-color: var(--accent-fill);
+  background: var(--accent-fill);
+}

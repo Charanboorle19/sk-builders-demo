@@ -51,9 +51,19 @@ export default function Navbar() {
           )}
         </nav>
 
-        <Link className="nav__cta btn btn--solid" to="/#contact">
-          Talk to us
-        </Link>
+        <div className="nav__actions">
+          <a
+            className="nav__demo"
+            href="/demo-2"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            DEMO 2
+          </a>
+          <Link className="nav__cta btn btn--solid" to="/#contact">
+            Talk to us
+          </Link>
+        </div>
 
         <button
           type="button"
@@ -84,6 +94,15 @@ export default function Navbar() {
             </Link>
           ),
         )}
+        <a
+          className="nav__demo nav__demo--drawer"
+          href="/demo-2"
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={close}
+        >
+          DEMO 2
+        </a>
         <Link className="btn btn--solid" to="/#contact" onClick={close}>
           Talk to us
         </Link>

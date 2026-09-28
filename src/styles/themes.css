@@ -1,0 +1,611 @@
+/* Demo2 themes — <html data-theme="brass|signature|navy|navy-dark"> */
+
+:root,
+:root[data-theme='brass'] {
+  /* Global core */
+  --color-bg: #f5f1e8;
+  --color-ink: #2c261e;
+  --color-muted: #6f6558;
+  --color-accent: #b8892d;
+  --color-accent-deep: #9a7224;
+  --color-line: rgba(44, 38, 30, 0.14);
+  --color-on-dark: #f5f1e8;
+  --color-accent-on-dark: #b8892d;
+  --color-accent-on-dark-hover: #d4a84a;
+  --color-white: #ffffff;
+  --color-card: #ffffff;
+  --color-error: #d08a6e;
+  --color-error-text: #e0a08a;
+
+  /* Per-section backgrounds */
+  --bg-nav: rgba(245, 241, 232, 0.96);
+  --bg-hero: #f5f1e8;
+  --bg-services: #c4b7a4;
+  --bg-properties: #f5f1e8;
+  --bg-why: #ebe4d6;
+  --bg-gallery-start: #f3eee4;
+  --bg-gallery-mid: #ebe4d6;
+  --bg-gallery-end: #e4dccb;
+  --bg-gallery: var(--bg-gallery-mid);
+  --bg-faq-start: #f7f3ea;
+  --bg-faq-mid: #f5f1e8;
+  --bg-faq-end: #efe8db;
+  --bg-faq: var(--bg-faq-mid);
+  --bg-contact: #141210;
+  --bg-hero-media: #1c1914;
+  --bg-hero-strip: #1a1713;
+  --bg-map: #b7ab98;
+  --bg-media: #ddd5c6;
+  --bg-media-alt: #d8cfc0;
+  --bg-card-soft: #fffef9;
+  --bg-paper: #faf7f0;
+
+  /* Per-section ink / muted / accent */
+  --ink-nav: #2c261e;
+  --muted-nav: #6f6558;
+  --accent-nav: #b8892d;
+  --accent-nav-deep: #9a7224;
+
+  --ink-hero: #1a1612;
+  --muted-hero: #4a4238;
+  --accent-hero: #b8892d;
+  --accent-hero-deep: #9a7224;
+  --eyebrow-hero: #8a6a2e;
+
+  --ink-services: #141210;
+  --muted-services: #3f3830;
+  --accent-services: #7a5a1c;
+  --accent-services-deep: #5f4514;
+  --line-services: rgba(20, 18, 16, 0.16);
+
+  --ink-properties: #1a1612;
+  --muted-properties: #6f6558;
+  --accent-properties: #b8892d;
+  --accent-properties-deep: #8f6c22;
+  --line-properties: rgba(44, 38, 30, 0.12);
+
+  --ink-why: #141210;
+  --muted-why: #3f3830;
+  --accent-why: #7a5a1c;
+  --accent-why-deep: #5f4514;
+  --line-why: rgba(20, 18, 16, 0.16);
+
+  --ink-gallery: #1d1b18;
+  --muted-gallery: #6f6558;
+  --accent-gallery: #b8892d;
+  --accent-gallery-soft: #e2c27a;
+  --line-gallery: rgba(29, 27, 24, 0.14);
+
+  --ink-faq: #1d1b18;
+  --muted-faq: #6f6558;
+  --accent-faq: #b8892d;
+  --accent-faq-deep: #8f6b22;
+  --line-faq: rgba(29, 27, 24, 0.14);
+
+  --ink-contact: #f5f1e8;
+  --muted-contact: #b0a694;
+  --accent-contact: #b8892d;
+  --accent-contact-hover: #d4a84a;
+  --line-contact: rgba(245, 241, 232, 0.14);
+
+  /* Shared helpers (theme-aware) */
+  --color-ink-strong: var(--ink-hero);
+  --color-ink-soft: var(--muted-hero);
+  --color-body: #3f3830;
+  --color-label: #5a5146;
+  --color-eyebrow: var(--eyebrow-hero);
+  --color-dark: var(--bg-contact);
+  --color-dark-panel: var(--bg-hero-media);
+  --color-dark-strip: var(--bg-hero-strip);
+  --color-dark-soft: #2c261e;
+  --color-dark-line: var(--line-contact);
+  --color-dark-muted: var(--muted-contact);
+  --color-surface-warm: var(--bg-services);
+  --color-surface-alt: var(--bg-why);
+  --color-surface-mid: var(--bg-gallery-end);
+  --color-surface-lift: var(--bg-gallery-start);
+  --color-surface-faq-top: var(--bg-faq-start);
+  --color-surface-faq-bot: var(--bg-faq-end);
+  --color-paper: var(--bg-paper);
+  --color-card-soft: var(--bg-card-soft);
+  --color-cta: #a8783a;
+  --color-cta-hover: #8f652e;
+  --color-map: var(--bg-map);
+  --color-media: var(--bg-media);
+  --color-media-alt: var(--bg-media-alt);
+  --color-media-gal: #e8e0d2;
+  --color-accent-hover: var(--accent-contact-hover);
+  --color-accent-soft: color-mix(in srgb, var(--color-accent) 12%, transparent);
+  --color-accent-wash: color-mix(in srgb, var(--color-accent) 10%, transparent);
+  --color-ink-wash: color-mix(in srgb, var(--color-ink) 6%, transparent);
+  --color-cream-95: color-mix(in srgb, var(--color-bg) 95%, transparent);
+  --color-cream-94: color-mix(in srgb, var(--color-bg) 94%, transparent);
+  --color-cream-92: color-mix(in srgb, var(--color-bg) 92%, transparent);
+  --color-cream-82: color-mix(in srgb, var(--color-bg) 82%, transparent);
+  --color-paper-94: color-mix(in srgb, var(--bg-paper) 94%, transparent);
+  --color-paper-72: color-mix(in srgb, var(--bg-paper) 72%, transparent);
+  --color-paper-70: color-mix(in srgb, var(--bg-paper) 70%, transparent);
+  --color-paper-55: color-mix(in srgb, var(--bg-paper) 55%, transparent);
+  --color-paper-45: color-mix(in srgb, var(--bg-paper) 45%, transparent);
+  --color-nav-bg: var(--bg-nav);
+  --color-ghost-fill: color-mix(in srgb, var(--color-bg) 55%, transparent);
+  --color-ghost-fill-strong: color-mix(in srgb, var(--color-bg) 90%, transparent);
+  --color-ghost-border: color-mix(in srgb, var(--color-ink) 28%, transparent);
+  --color-chip-border: color-mix(in srgb, var(--color-ink) 22%, transparent);
+  --color-overlay-dark: color-mix(in srgb, var(--bg-contact) 82%, transparent);
+  --color-overlay-ink: color-mix(in srgb, var(--bg-contact) 42%, transparent);
+  --color-gal-gold: var(--accent-gallery-soft);
+  --color-why-accent: var(--accent-why);
+  --color-why-accent-hover: var(--accent-why-deep);
+  --color-faq-active: var(--accent-faq-deep);
+  --color-switch-track: color-mix(in srgb, var(--color-ink) 8%, transparent);
+}
+
+:root[data-theme='signature'] {
+  --color-bg: #f4f2ed;
+  --color-ink: #1a1713;
+  --color-muted: #6e6659;
+  --color-accent: #7a2e1f;
+  --color-accent-deep: #5e2318;
+  --color-line: rgba(15, 15, 15, 0.14);
+  --color-on-dark: #f4f2ed;
+  --color-accent-on-dark: #d4634a;
+  --color-accent-on-dark-hover: #e07a64;
+  --color-white: #ffffff;
+  --color-card: #ffffff;
+  --color-error: #c4785e;
+  --color-error-text: #e0a08a;
+
+  --bg-nav: rgba(255, 255, 255, 0.96);
+  --bg-hero: #ffffff;
+  --bg-services: #0f0f0f;
+  --bg-properties: #f4f4f2;
+  --bg-why: #e9e9e6;
+  --bg-gallery-start: #f7f7f5;
+  --bg-gallery-mid: #ededeb;
+  --bg-gallery-end: #e3e3df;
+  --bg-gallery: var(--bg-gallery-mid);
+  --bg-faq-start: #ffffff;
+  --bg-faq-mid: #f7f7f5;
+  --bg-faq-end: #eeeeeb;
+  --bg-faq: var(--bg-faq-mid);
+  --bg-contact: #0f0f0f;
+  --bg-hero-media: #0f0f0f;
+  --bg-hero-strip: #141210;
+  --bg-map: #b5aaa0;
+  --bg-media: #d4d4d0;
+  --bg-media-alt: #cbcbc7;
+  --bg-card-soft: #fafafa;
+  --bg-paper: #f7f7f5;
+
+  --ink-nav: #1a1713;
+  --muted-nav: #6e6659;
+  --accent-nav: #7a2e1f;
+  --accent-nav-deep: #5e2318;
+
+  --ink-hero: #1a1713;
+  --muted-hero: #6e6659;
+  --accent-hero: #7a2e1f;
+  --accent-hero-deep: #5e2318;
+  --eyebrow-hero: #7a2e1f;
+
+  --ink-services: #f4f2ed;
+  --muted-services: #b0a694;
+  --accent-services: #d4634a;
+  --accent-services-deep: #e07a64;
+  --line-services: rgba(244, 242, 237, 0.14);
+
+  --ink-properties: #1a1713;
+  --muted-properties: #6e6659;
+  --accent-properties: #7a2e1f;
+  --accent-properties-deep: #5e2318;
+  --line-properties: rgba(15, 15, 15, 0.14);
+
+  --ink-why: #1a1713;
+  --muted-why: #6e6659;
+  --accent-why: #7a2e1f;
+  --accent-why-deep: #5e2318;
+  --line-why: rgba(15, 15, 15, 0.14);
+
+  --ink-gallery: #1a1713;
+  --muted-gallery: #6e6659;
+  --accent-gallery: #7a2e1f;
+  --accent-gallery-soft: #d4634a;
+  --line-gallery: rgba(15, 15, 15, 0.14);
+
+  --ink-faq: #1a1713;
+  --muted-faq: #6e6659;
+  --accent-faq: #7a2e1f;
+  --accent-faq-deep: #5e2318;
+  --line-faq: rgba(15, 15, 15, 0.14);
+
+  --ink-contact: #f4f2ed;
+  --muted-contact: #b0a694;
+  --accent-contact: #d4634a;
+  --accent-contact-hover: #e07a64;
+  --line-contact: rgba(244, 242, 237, 0.14);
+
+  --color-ink-strong: var(--ink-hero);
+  --color-ink-soft: var(--muted-hero);
+  --color-body: #3a342c;
+  --color-label: #5a5348;
+  --color-eyebrow: var(--eyebrow-hero);
+  --color-dark: var(--bg-contact);
+  --color-dark-panel: var(--bg-hero-media);
+  --color-dark-strip: var(--bg-hero-strip);
+  --color-dark-soft: #1a1713;
+  --color-dark-line: var(--line-contact);
+  --color-dark-muted: var(--muted-contact);
+  --color-surface-warm: var(--bg-services);
+  --color-surface-alt: var(--bg-why);
+  --color-surface-mid: var(--bg-gallery-end);
+  --color-surface-lift: var(--bg-gallery-start);
+  --color-surface-faq-top: var(--bg-faq-start);
+  --color-surface-faq-bot: var(--bg-faq-end);
+  --color-paper: var(--bg-paper);
+  --color-card-soft: var(--bg-card-soft);
+  --color-cta: #7a2e1f;
+  --color-cta-hover: #5e2318;
+  --color-map: var(--bg-map);
+  --color-media: var(--bg-media);
+  --color-media-alt: var(--bg-media-alt);
+  --color-media-gal: #dcdcd8;
+  --color-accent-hover: var(--accent-contact-hover);
+  --color-accent-soft: color-mix(in srgb, var(--color-accent) 12%, transparent);
+  --color-accent-wash: color-mix(in srgb, var(--color-accent) 10%, transparent);
+  --color-ink-wash: color-mix(in srgb, var(--color-ink) 6%, transparent);
+  --color-cream-95: color-mix(in srgb, var(--color-bg) 95%, transparent);
+  --color-cream-94: color-mix(in srgb, var(--color-bg) 94%, transparent);
+  --color-cream-92: color-mix(in srgb, var(--color-bg) 92%, transparent);
+  --color-cream-82: color-mix(in srgb, var(--color-bg) 82%, transparent);
+  --color-paper-94: color-mix(in srgb, var(--bg-paper) 94%, transparent);
+  --color-paper-72: color-mix(in srgb, var(--bg-paper) 72%, transparent);
+  --color-paper-70: color-mix(in srgb, var(--bg-paper) 70%, transparent);
+  --color-paper-55: color-mix(in srgb, var(--bg-paper) 55%, transparent);
+  --color-paper-45: color-mix(in srgb, var(--bg-paper) 45%, transparent);
+  --color-nav-bg: var(--bg-nav);
+  --color-ghost-fill: color-mix(in srgb, var(--bg-hero) 55%, transparent);
+  --color-ghost-fill-strong: color-mix(in srgb, var(--bg-hero) 90%, transparent);
+  --color-ghost-border: color-mix(in srgb, var(--color-ink) 28%, transparent);
+  --color-chip-border: color-mix(in srgb, var(--color-ink) 22%, transparent);
+  --color-overlay-dark: color-mix(in srgb, var(--bg-contact) 82%, transparent);
+  --color-overlay-ink: color-mix(in srgb, var(--bg-contact) 42%, transparent);
+  --color-gal-gold: var(--accent-gallery-soft);
+  --color-why-accent: var(--accent-why);
+  --color-why-accent-hover: var(--accent-why-deep);
+  --color-faq-active: var(--accent-faq-deep);
+  --color-switch-track: color-mix(in srgb, var(--color-ink) 8%, transparent);
+}
+
+:root[data-theme='navy'] {
+  --accent-fill: #e7b644;
+  --accent-fill-hover: #d4a02e;
+  --on-accent: #0b1f3a;
+  --accent-text-on-light: #7a5a0e;
+  --accent-text-on-dark: #e7b644;
+  --ink: #0b1f3a;
+  --muted: #5b6577;
+  --line: rgba(11, 31, 58, 0.14);
+
+  --color-bg: #f4f6f9;
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent-fill);
+  --color-accent-deep: var(--accent-fill-hover);
+  --color-line: var(--line);
+  --color-on-dark: #f4f6f9;
+  --color-on-accent: var(--on-accent);
+  --color-accent-on-dark: var(--accent-text-on-dark);
+  --color-accent-on-dark-hover: #f0c45c;
+  --color-white: #ffffff;
+  --color-card: #ffffff;
+  --color-error: #c4785e;
+  --color-error-text: #e0a08a;
+
+  --bg-nav: rgba(255, 255, 255, 0.96);
+  --bg-hero: #f4f6f9;
+  --bg-services: #0b1f3a;
+  --bg-properties: #eef1f6;
+  --bg-why: #e3e8f0;
+  --bg-gallery-start: #f4f6f9;
+  --bg-gallery-mid: #e8ecf2;
+  --bg-gallery-end: #dce2ec;
+  --bg-gallery: var(--bg-gallery-mid);
+  --bg-faq-start: #ffffff;
+  --bg-faq-mid: #f1f4f8;
+  --bg-faq-end: #e8ecf2;
+  --bg-faq: var(--bg-faq-mid);
+  --bg-contact: #081629;
+  --bg-hero-media: #0b1f3a;
+  --bg-hero-strip: #0b1f3a;
+  --bg-map: #c9d1de;
+  --bg-media: #d5dbe6;
+  --bg-media-alt: #c9d1de;
+  --bg-card-soft: #ffffff;
+  --bg-paper: #f4f6f9;
+
+  --ink-nav: var(--ink);
+  --muted-nav: var(--muted);
+  --accent-nav: var(--accent-fill);
+  --accent-nav-deep: var(--accent-text-on-light);
+
+  --ink-hero: var(--ink);
+  --muted-hero: var(--muted);
+  --accent-hero: var(--accent-fill);
+  --accent-hero-deep: var(--accent-text-on-light);
+  --eyebrow-hero: var(--accent-text-on-light);
+
+  --ink-services: #f4f6f9;
+  --muted-services: #a8b3c7;
+  --accent-services: var(--accent-text-on-dark);
+  --accent-services-deep: #f0c45c;
+  --line-services: rgba(244, 246, 249, 0.14);
+
+  --ink-properties: var(--ink);
+  --muted-properties: var(--muted);
+  --accent-properties: var(--accent-fill);
+  --accent-properties-deep: var(--accent-text-on-light);
+  --line-properties: var(--line);
+
+  --ink-why: var(--ink);
+  --muted-why: var(--muted);
+  --accent-why: var(--accent-text-on-light);
+  --accent-why-deep: #5e450a;
+  --line-why: var(--line);
+
+  --ink-gallery: var(--ink);
+  --muted-gallery: var(--muted);
+  --accent-gallery: var(--accent-text-on-light);
+  --accent-gallery-soft: var(--accent-fill);
+  --line-gallery: var(--line);
+
+  --ink-faq: var(--ink);
+  --muted-faq: var(--muted);
+  --accent-faq: var(--accent-text-on-light);
+  --accent-faq-deep: #5e450a;
+  --line-faq: var(--line);
+
+  --ink-contact: #f4f6f9;
+  --muted-contact: #a8b3c7;
+  --accent-contact: var(--accent-text-on-dark);
+  --accent-contact-hover: #f0c45c;
+  --line-contact: rgba(244, 246, 249, 0.14);
+
+  --map-pin: #0b1f3a;
+  --map-pin-ring: #ffffff;
+  --map-pin-active: #e7b644;
+
+  --color-ink-strong: var(--ink-hero);
+  --color-ink-soft: var(--muted-hero);
+  --color-body: #3a4558;
+  --color-label: #5b6577;
+  --color-eyebrow: var(--eyebrow-hero);
+  --color-dark: var(--bg-contact);
+  --color-dark-panel: var(--bg-hero-media);
+  --color-dark-strip: var(--bg-hero-strip);
+  --color-dark-soft: #0b1f3a;
+  --color-dark-line: var(--line-contact);
+  --color-dark-muted: var(--muted-contact);
+  --color-surface-warm: var(--bg-services);
+  --color-surface-alt: var(--bg-why);
+  --color-surface-mid: var(--bg-gallery-end);
+  --color-surface-lift: var(--bg-gallery-start);
+  --color-surface-faq-top: var(--bg-faq-start);
+  --color-surface-faq-bot: var(--bg-faq-end);
+  --color-paper: var(--bg-paper);
+  --color-card-soft: var(--bg-card-soft);
+  --color-cta: var(--accent-fill);
+  --color-cta-hover: var(--accent-fill-hover);
+  --color-map: var(--bg-map);
+  --color-media: var(--bg-media);
+  --color-media-alt: var(--bg-media-alt);
+  --color-media-gal: #d5dbe6;
+  --color-accent-hover: var(--accent-contact-hover);
+  --color-accent-soft: color-mix(in srgb, var(--color-accent) 12%, transparent);
+  --color-accent-wash: color-mix(in srgb, var(--color-accent) 10%, transparent);
+  --color-ink-wash: color-mix(in srgb, var(--color-ink) 6%, transparent);
+  --color-cream-95: color-mix(in srgb, var(--color-bg) 95%, transparent);
+  --color-cream-94: color-mix(in srgb, var(--color-bg) 94%, transparent);
+  --color-cream-92: color-mix(in srgb, var(--color-bg) 92%, transparent);
+  --color-cream-82: color-mix(in srgb, var(--color-bg) 82%, transparent);
+  --color-paper-94: color-mix(in srgb, var(--bg-paper) 94%, transparent);
+  --color-paper-72: color-mix(in srgb, var(--bg-paper) 72%, transparent);
+  --color-paper-70: color-mix(in srgb, var(--bg-paper) 70%, transparent);
+  --color-paper-55: color-mix(in srgb, var(--bg-paper) 55%, transparent);
+  --color-paper-45: color-mix(in srgb, var(--bg-paper) 45%, transparent);
+  --color-nav-bg: var(--bg-nav);
+  --color-ghost-fill: color-mix(in srgb, var(--bg-hero) 55%, transparent);
+  --color-ghost-fill-strong: color-mix(in srgb, var(--bg-hero) 90%, transparent);
+  --color-ghost-border: color-mix(in srgb, var(--color-ink) 28%, transparent);
+  --color-chip-border: color-mix(in srgb, var(--color-ink) 22%, transparent);
+  --color-overlay-dark: color-mix(in srgb, var(--bg-contact) 82%, transparent);
+  --color-overlay-ink: color-mix(in srgb, var(--bg-contact) 42%, transparent);
+  --color-gal-gold: var(--accent-gallery-soft);
+  --color-why-accent: var(--accent-why);
+  --color-why-accent-hover: var(--accent-why-deep);
+  --color-faq-active: var(--accent-faq-deep);
+  --color-switch-track: color-mix(in srgb, var(--color-ink) 8%, transparent);
+}
+
+:root[data-theme='navy-dark'] {
+  /* Dark primary + light-navy surfaces mixed in */
+  --accent-fill: #e7b644;
+  --accent-fill-hover: #f2c55c;
+  --on-accent: #0b1f3a;
+  --accent-text-on-light: #7a5a0e;
+  --accent-text-on-dark: #e7b644;
+  --ink: #f1f4f9;
+  --muted: #9fadc2;
+  --line: rgba(241, 244, 249, 0.16);
+  --light-ink: #0b1f3a;
+  --light-muted: #5b6577;
+  --light-surface: #f4f6f9;
+  --light-surface-soft: #eef1f6;
+  --light-surface-mid: #e3e8f0;
+  --light-line: rgba(11, 31, 58, 0.14);
+
+  --color-bg: #0b1f3a;
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent-fill);
+  --color-accent-deep: var(--accent-fill-hover);
+  --color-line: var(--line);
+  --color-on-dark: #f1f4f9;
+  --color-on-accent: var(--on-accent);
+  --color-accent-on-dark: var(--accent-text-on-dark);
+  --color-accent-on-dark-hover: var(--accent-fill-hover);
+  --color-white: #ffffff;
+  --color-card: var(--light-surface);
+  --color-error: #f2a48a;
+  --color-error-text: #ffc4b0;
+
+  --bg-nav: rgba(8, 22, 41, 0.94);
+  --bg-hero: #0b1f3a;
+  --bg-services: #102a4c;
+  --bg-properties: #0b1f3a;
+  --bg-why: #0e2544;
+  --bg-gallery-start: #0b1f3a;
+  --bg-gallery-mid: #0e2544;
+  --bg-gallery-end: #081629;
+  --bg-gallery: var(--bg-gallery-mid);
+  --bg-faq-start: #0b1f3a;
+  --bg-faq-mid: #0a1d36;
+  --bg-faq-end: #081629;
+  --bg-faq: var(--bg-faq-mid);
+  --bg-contact: #050f1e;
+  --bg-hero-media: #081629;
+  --bg-hero-strip: #061525;
+  --bg-map: #ffffff;
+  --map-base: #ffffff;
+  --map-land: #ffffff;
+  --map-water: #e8eef6;
+  --map-road: #0b1f3a;
+  --map-road-minor: #3d6ea5;
+  --map-building: #d7e0ec;
+  --bg-media: #16345c;
+  --bg-media-alt: #132f55;
+  --bg-card-soft: #1a3a63;
+  --bg-paper: #132f55;
+  --bg-elevated: #16345c;
+
+  --ink-nav: var(--ink);
+  --muted-nav: var(--muted);
+  --accent-nav: var(--accent-fill);
+  --accent-nav-deep: var(--accent-fill-hover);
+
+  --ink-hero: var(--ink);
+  --muted-hero: var(--muted);
+  --accent-hero: var(--accent-fill);
+  --accent-hero-deep: var(--accent-text-on-dark);
+  --eyebrow-hero: var(--accent-text-on-dark);
+
+  --ink-services: var(--ink);
+  --muted-services: var(--muted);
+  --accent-services: var(--accent-text-on-dark);
+  --accent-services-deep: var(--accent-fill-hover);
+  --line-services: var(--line);
+
+  /* Section chrome stays light-on-dark; cards pick up light surfaces separately */
+  --ink-properties: var(--ink);
+  --muted-properties: var(--muted);
+  --accent-properties: var(--accent-fill);
+  --accent-properties-deep: var(--accent-fill-hover);
+  --line-properties: var(--line);
+
+  --ink-why: var(--ink);
+  --muted-why: var(--muted);
+  --accent-why: var(--accent-text-on-dark);
+  --accent-why-deep: var(--accent-fill-hover);
+  --line-why: var(--line);
+
+  --ink-gallery: var(--ink);
+  --muted-gallery: var(--muted);
+  --accent-gallery: var(--accent-text-on-dark);
+  --accent-gallery-soft: var(--accent-fill);
+  --line-gallery: var(--line);
+
+  --ink-faq: var(--ink);
+  --muted-faq: var(--muted);
+  --accent-faq: var(--accent-text-on-dark);
+  --accent-faq-deep: var(--accent-fill-hover);
+  --line-faq: var(--line);
+
+  --ink-contact: var(--ink);
+  --muted-contact: var(--muted);
+  --accent-contact: var(--accent-text-on-dark);
+  --accent-contact-hover: var(--accent-fill-hover);
+  --line-contact: var(--line);
+
+  --map-pin: #e7b644;
+  --map-pin-ring: #0b1f3a;
+  --map-pin-active: #ffffff;
+  --map-pin-active-ring: #e7b644;
+
+  --color-ink-strong: var(--ink-hero);
+  --color-ink-soft: var(--muted-hero);
+  --color-body: #c5d0e0;
+  --color-label: #9fadc2;
+  --color-eyebrow: var(--eyebrow-hero);
+  --color-dark: var(--bg-contact);
+  --color-dark-panel: var(--bg-hero-media);
+  --color-dark-strip: var(--bg-hero-strip);
+  --color-dark-soft: #132f55;
+  --color-dark-line: var(--line-contact);
+  --color-dark-muted: var(--muted-contact);
+  --color-surface-warm: var(--bg-services);
+  --color-surface-alt: var(--bg-why);
+  --color-surface-mid: var(--bg-gallery-end);
+  --color-surface-lift: var(--bg-gallery-start);
+  --color-surface-faq-top: var(--bg-faq-start);
+  --color-surface-faq-bot: var(--bg-faq-end);
+  --color-paper: var(--bg-paper);
+  --color-card-soft: var(--bg-card-soft);
+  --color-cta: var(--accent-fill);
+  --color-cta-hover: var(--accent-fill-hover);
+  --color-map: var(--bg-map);
+  --color-media: var(--bg-media);
+  --color-media-alt: var(--bg-media-alt);
+  --color-media-gal: #16345c;
+  --color-accent-hover: var(--accent-contact-hover);
+  --color-accent-soft: color-mix(in srgb, var(--color-accent) 18%, transparent);
+  --color-accent-wash: color-mix(in srgb, var(--color-accent) 14%, transparent);
+  --color-ink-wash: color-mix(in srgb, var(--color-ink) 8%, transparent);
+  --color-cream-95: color-mix(in srgb, var(--light-surface) 94%, transparent);
+  --color-cream-94: color-mix(in srgb, var(--light-surface) 92%, transparent);
+  --color-cream-92: color-mix(in srgb, var(--light-surface) 88%, transparent);
+  --color-cream-82: color-mix(in srgb, var(--light-surface) 82%, transparent);
+  --color-paper-94: color-mix(in srgb, var(--bg-elevated) 94%, transparent);
+  --color-paper-72: color-mix(in srgb, var(--bg-elevated) 72%, transparent);
+  --color-paper-70: color-mix(in srgb, var(--bg-elevated) 70%, transparent);
+  --color-paper-55: color-mix(in srgb, var(--bg-elevated) 55%, transparent);
+  --color-paper-45: color-mix(in srgb, var(--bg-elevated) 45%, transparent);
+  --color-nav-bg: var(--bg-nav);
+  --color-ghost-fill: color-mix(in srgb, var(--light-surface) 12%, transparent);
+  --color-ghost-fill-strong: color-mix(in srgb, var(--light-surface) 18%, transparent);
+  --color-ghost-border: color-mix(in srgb, var(--ink) 34%, transparent);
+  --color-chip-border: color-mix(in srgb, var(--ink) 28%, transparent);
+  --color-overlay-dark: color-mix(in srgb, #050f1e 78%, transparent);
+  --color-overlay-ink: color-mix(in srgb, #050f1e 48%, transparent);
+  --color-gal-gold: var(--accent-gallery-soft);
+  --color-why-accent: var(--accent-why);
+  --color-why-accent-hover: var(--accent-why-deep);
+  --color-faq-active: var(--accent-faq-deep);
+  --color-switch-track: color-mix(in srgb, var(--ink) 12%, transparent);
+  color-scheme: dark;
+}
+
+html {
+  color-scheme: light;
+}
+
+.d2-top,
+.d2-hero,
+.d2-offer,
+.d2-featured,
+.d2-why,
+.d2-gal,
+.d2-faq,
+.d2-cta,
+.d2 {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}

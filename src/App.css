@@ -88,6 +88,23 @@
     var(--bg);
 }
 
+.site:not(.site--demo-2) {
+  padding-top: 4.25rem;
+}
+
+.site:not(.site--demo-2) main {
+  scroll-margin-top: 4.25rem;
+}
+
+.site--demo-2 {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  background: #f5f1e8;
+  overflow-x: hidden;
+}
+
 /* Mobile: every homepage section shares the same height floor (can grow, never short). */
 @media (max-width: 900px) {
   .about-vault,
@@ -181,10 +198,12 @@
 
 /* ——— Navigation ——— */
 .nav {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 40;
-  background: rgba(243, 239, 232, 0.82);
+  background: rgba(243, 239, 232, 0.96);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid transparent;
   transition: border-color 0.25s ease, background 0.25s ease;
@@ -192,7 +211,7 @@
 
 .nav--scrolled {
   border-bottom-color: var(--line);
-  background: rgba(243, 239, 232, 0.94);
+  background: rgba(243, 239, 232, 0.98);
 }
 
 .nav__inner {
@@ -231,10 +250,47 @@
 }
 
 .nav__cta {
-  display: none;
+  display: inline-flex;
   min-height: 2.4rem;
   padding: 0.45rem 1rem;
   font-size: 0.86rem;
+}
+
+.nav__actions {
+  display: none;
+  align-items: center;
+  justify-self: end;
+  gap: 0.75rem;
+}
+
+.nav__demo {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.4rem;
+  padding: 0.4rem 0.85rem;
+  border: 1px solid rgba(201, 168, 76, 0.55);
+  border-radius: 999px;
+  background: rgba(201, 168, 76, 0.12);
+  color: #8a6a1e;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.nav__demo:hover {
+  background: rgba(201, 168, 76, 0.22);
+  border-color: rgba(201, 168, 76, 0.8);
+  color: #6f5516;
+}
+
+.nav__demo--drawer {
+  width: fit-content;
 }
 
 .nav__toggle {
@@ -291,7 +347,7 @@
 
 @media (min-width: 900px) {
   .nav__links,
-  .nav__cta {
+  .nav__actions {
     display: flex;
   }
 

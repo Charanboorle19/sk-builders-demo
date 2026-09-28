@@ -5,6 +5,7 @@ import Footer from './components/Footer'
 import HomePage from './pages/HomePage'
 import PropertiesPage from './pages/PropertiesPage'
 import PropertyPage from './pages/PropertyPage'
+import Demo2Page from './pages/Demo2Page'
 
 function ScrollManager() {
   const { pathname, hash } = useLocation()
@@ -26,18 +27,30 @@ function ScrollManager() {
 }
 
 function AppShell() {
+  const { pathname } = useLocation()
+  const isDemo2 = pathname === '/demo-2'
+
   return (
-    <div className="site" id="top">
+    <div className={`site${isDemo2 ? ' site--demo-2' : ''}`} id="top">
       <ScrollManager />
-      <Navbar />
-      <main>
+      {!isDemo2 ? <Navbar /> : null}
+      {isDemo2 ? (
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/properties" element={<PropertiesPage />} />
-          <Route path="/properties/:propertyId" element={<PropertyPage />} />
+          <Route path="/demo-2" element={<Demo2Page />} />
         </Routes>
-      </main>
-      <Footer />
+      ) : (
+        <>
+          <main>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/properties" element={<PropertiesPage />} />
+              <Route path="/properties/:propertyId" element={<PropertyPage />} />
+              <Route path="/demo-2" element={<Demo2Page />} />
+            </Routes>
+          </main>
+          <Footer />
+        </>
+      )}
     </div>
   )
 }
