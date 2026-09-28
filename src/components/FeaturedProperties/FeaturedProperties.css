@@ -1299,6 +1299,19 @@
     min-height: 240px;
   }
 
+  .d2-featured__map-shell .mapboxgl-ctrl-group {
+    margin: 0.65rem;
+    border: 1px solid var(--fp-line);
+    border-radius: 0.45rem;
+    box-shadow: 0 4px 14px color-mix(in srgb, var(--fp-ink) 12%, transparent);
+    overflow: hidden;
+  }
+
+  .d2-featured__map-shell .mapboxgl-ctrl-group button {
+    width: 2.15rem;
+    height: 2.15rem;
+  }
+
   /* List-only mobile: same carousel cards as map mode, map hidden */
   .d2-featured.is-list-only {
     min-height: 0;

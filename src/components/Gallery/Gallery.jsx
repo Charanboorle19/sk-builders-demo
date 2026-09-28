@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { createPortal } from 'react-dom'
 import {
   GALLERY_FILTERS,
   GALLERY_ITEMS,
@@ -133,7 +134,7 @@ function Lightbox({ items, activeId, onClose, onNavigate }) {
   const categoryLabel =
     GALLERY_FILTERS.find((f) => f.id === active.category)?.label || active.category
 
-  return (
+  return createPortal(
     <div
       className="d2-gal__lightbox"
       role="dialog"
@@ -152,19 +153,20 @@ function Lightbox({ items, activeId, onClose, onNavigate }) {
         onNavigate(delta > 0 ? -1 : 1)
       }}
     >
+      <button
+        type="button"
+        className="d2-gal__lightbox-close"
+        onClick={onClose}
+        aria-label="Close image"
+      >
+        <span aria-hidden="true">×</span>
+        <span className="d2-gal__lightbox-close-text">Close</span>
+      </button>
+
       <div
         className="d2-gal__lightbox-panel"
         onClick={(event) => event.stopPropagation()}
       >
-        <button
-          type="button"
-          className="d2-gal__lightbox-close"
-          onClick={onClose}
-          aria-label="Close gallery"
-        >
-          ×
-        </button>
-
         <button
           type="button"
           className="d2-gal__lightbox-nav d2-gal__lightbox-nav--prev"
@@ -175,7 +177,9 @@ function Lightbox({ items, activeId, onClose, onNavigate }) {
         </button>
 
         <figure className="d2-gal__lightbox-figure" key={active.id}>
-          <img src={active.image} alt="" />
+          <div className="d2-gal__lightbox-media">
+            <img src={active.image} alt={active.title} />
+          </div>
           <figcaption className="d2-gal__lightbox-caption">
             <p className="d2-gal__lightbox-cat">{categoryLabel}</p>
             <h3 className="d2-gal__lightbox-title">{active.title}</h3>
@@ -195,7 +199,8 @@ function Lightbox({ items, activeId, onClose, onNavigate }) {
           →
         </button>
       </div>
-    </div>
+    </div>,
+    document.body,
   )
 }
 

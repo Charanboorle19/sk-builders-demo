@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import Map, { Marker, Source, Layer } from 'react-map-gl/mapbox'
+import Map, { Marker, Source, Layer, NavigationControl } from 'react-map-gl/mapbox'
 import 'mapbox-gl/dist/mapbox-gl.css'
 
 import { MAPBOX_TOKEN, HAS_MAPBOX_TOKEN } from '../../config/mapbox'
@@ -117,6 +117,7 @@ export default function FeaturedProperties() {
   const [listOnly, setListOnly] = useState(false)
   const [listPage, setListPage] = useState(0)
   const [listPageSize, setListPageSize] = useState(LIST_PAGE_SIZE_DESKTOP)
+  const [isMobileMap, setIsMobileMap] = useState(false)
   const [themeAccent, setThemeAccent] = useState('#b8892d')
   const [themeBg, setThemeBg] = useState('#f5f1e8')
   const autoScrollPausedRef = useRef(false)
@@ -126,12 +127,26 @@ export default function FeaturedProperties() {
   useEffect(() => {
     const media = window.matchMedia('(max-width: 960px)')
     const sync = () => {
-      setListPageSize(media.matches ? LIST_PAGE_SIZE_MOBILE : LIST_PAGE_SIZE_DESKTOP)
+      const mobile = media.matches
+      setListPageSize(mobile ? LIST_PAGE_SIZE_MOBILE : LIST_PAGE_SIZE_DESKTOP)
+      setIsMobileMap(mobile)
     }
     sync()
     media.addEventListener('change', sync)
     return () => media.removeEventListener('change', sync)
   }, [])
+
+  useEffect(() => {
+    const mapInstance = mapRef.current?.getMap?.() ?? mapRef.current
+    if (!mapInstance) return
+    if (isMobileMap) {
+      mapInstance.dragPan.disable()
+      mapInstance.touchZoomRotate.disableRotation()
+    } else {
+      mapInstance.dragPan.enable()
+      mapInstance.touchZoomRotate.enableRotation()
+    }
+  }, [isMobileMap])
 
   useEffect(() => {
     const syncTheme = () => {
@@ -694,8 +709,29 @@ export default function FeaturedProperties() {
                 attributionControl={false}
                 pitch={0}
                 maxPitch={0}
-                onLoad={(evt) => applyWarmMapStyle(evt.target)}
+                dragPan={!isMobileMap}
+                dragRotate={false}
+                touchPitch={false}
+                keyboard={!isMobileMap}
+                boxZoom={!isMobileMap}
+                scrollZoom
+                doubleClickZoom
+                touchZoomRotate
+                onLoad={(evt) => {
+                  applyWarmMapStyle(evt.target)
+                  if (isMobileMap) {
+                    evt.target.dragPan.disable()
+                    evt.target.touchZoomRotate.disableRotation()
+                  }
+                }}
               >
+                {isMobileMap && (
+                  <NavigationControl
+                    position="top-right"
+                    showCompass={false}
+                    visualizePitch={false}
+                  />
+                )}
                 {highlightGeoJson && (
                   <Source id="d2-featured-highlight" type="geojson" data={highlightGeoJson}>
                     <Layer

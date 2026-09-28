@@ -44,7 +44,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 50;
+  z-index: 100;
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
@@ -1201,7 +1201,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 49;
+    z-index: 99;
     padding: 1.1rem var(--d2-pad-x) 1.75rem;
     background: color-mix(in srgb, var(--bg-nav) 98%, transparent);
     border-top: 1px solid var(--d2-line);
